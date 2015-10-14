@@ -1,4 +1,8 @@
 docker build -t parana/jessie-ffmpeg:build .
+echo " • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • "
 echo "Para testar use :"
-echo "docker run --rm -v $PWD/work:/work parana/jessie-ffmpeg:build ffmpeg -i source.mp4 -loop 0 -r 5 -s 320x200 -pix_fmt rgb24 temp.gif"
-echo "docker run --rm -v $PWD/work:/work parana/jessie-ffmpeg:build convert temp.gif -fuzz 8% -layers Optimize final.gif"
+echo "• rm work/temp.gif"
+echo "• docker run --rm -v $PWD/work:/work parana/jessie-ffmpeg:build ffmpeg -i source.mov -loop 0 -r 5 -s 964x550 -pix_fmt rgb24 temp.gif"
+echo "• ls -lat work"
+echo "Podemos tentar diminuir o tamanho do GIF usando:"
+echo "• docker run --rm -v $PWD/work:/work parana/jessie-ffmpeg:build convert temp.gif -fuzz 8% -layers Optimize final.gif"
